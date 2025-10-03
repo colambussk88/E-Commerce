@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwathiKart</title>
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+    <script src="script.js" defer></script>
+
+    <!-- ======================================================== HEADER ======================================================== -->
+    <header>
+        <div id="MyHeader">
+            <nav id="navbar">
+                <div class="logo"> <a href="index.html" title="SWATHIKART"><span>SWATHI</span>KART</a> </div>
+                <div id="menu">
+                    <a href="#" class="active" title="HOME">HOME</a>
+                    <a href="#" title="ABOUT">ABOUT</a>
+                    <div class="dropdown">
+                        <a href="#" title="PRODUCTS">PRODUCTS &nbsp; <i class="fas fa-chevron-down"></i></a>
+                        <div>
+                            <ul>
+                                <li><a href="#product_heading_section">Products</a></li>
+                                <li><a href="#">Product Single</a></li>
+                                <li><a href="#" onclick="openCart()">Cart Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" title="PAGES">PAGES &nbsp; <i class="fas fa-chevron-down"></i></a>
+                        <div>
+                            <ul>
+                                <li><a href="#">Blog Page</a></li>
+                                <li><a href="#">Blog Single</a></li>
+                                <li><a href="#">Elements</a></li>
+                                <li><a href="#">Error Page</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" title="CONTACT">CONTACT</a>
+                    <div> <input id="search_bar" type="text" value="" placeholder="Search"> </div>
+                    <button class="fas fa-search" id="search_btn" onclick="searchBar()" title="SEARCH"></button>
+                </div>
+                <div class="actions">
+                    <button class="btn" title="LOGIN"><i class="fas fa-user"></i> Login</button>
+                    <button class="btn count_btn" onclick="openCart()" title="CART"><i class="fas fa-lock"></i> <span id="count">0</span> Cart</button>
+                    <button class="dark-mode" onclick="toggleTheme()" title="THEME SWITCH"><i class="fal fa-moon"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- ======================================================== /HEADER ======================================================== -->
+     
+    <!-- ======================================================== BANNER ======================================================== -->
+    <section id="banner">
+        <div id="banner_image"></div>
+        <div id="banner_content">
+            <div class="banner_text">Up To 60% Off Now</div>
+            <div class="banner_text">Mid Season Sale 40%</div>
+            <div class="banner_text">Final Clearance : Take 20% Off 'Sale Must-haves'</div>
+            <div class="banner_text"> <a href="#product_heading_section"><button title="BUY NOW">Start Shopping &nbsp; <i class="fa fa-arrow-right"></i> </button></a> </div>
+        </div>
+    </section>
+    <!-- ======================================================== /BANNER ======================================================== -->
+
+    <!-- ======================================================== FREE-SHIPPING ======================================================== -->
+    <section id="free_shoping_section">
+        <div id="free_shoping_section_wrap">
+            <div>Free Shipping For You Till Midnight</div>
+            <i class="fas fa-shipping-fast"></i>
+        </div>
+    </section>
+    <!-- ======================================================== /FREE-SHIPPING ======================================================== -->
+
+    <!-- ======================================================== CARDS ======================================================== -->
+    <section id="card_section">
+        <div id="card_wrap">
+            <div class="card" id="card1"></div>
+            <div class="card_content_wrapper card_con1">
+                Platform Velvet <br>
+                Sandals <br>
+                <a href="#product_heading_section"> <button title="BUY NOW">Shop Now &nbsp; <i class="fa fa-arrow-right"></i> </button> </a> 
+            </div>
+            <div class="card" id="card2"></div>
+            <div class="card_content_wrapper card_con2">
+                Pebbled Weekend <br>
+                Bag <br>
+                <a href="#product_heading_section"> <button title="BUY NOW"> Shop Now &nbsp; <i class="fa fa-arrow-right"></i> </button>  </a>
+            </div>
+        </div>
+    </section>
+    <!-- ======================================================== /CARDS ======================================================== -->
+
+    <!-- ======================================================== VIDEO ======================================================== -->
+    <section id="product_video_section">
+        <div id="product_video_image"></div>
+        <div id="product_video_content">
+            <div id="product_video_box1">Pre-Fall Collection,That mid-summer craving for fall styles?</div>
+            <div id="product_video_box2" class="fa fa-play" onclick="playVideo()" title="Sports Nutrition - At The Grocery Store"></div>
+        </div>
+    </section>
+    <!-- ======================================================== /VIDEO ======================================================== -->
+
+    <!-- ======================================================== PRODUCT SECTION ======================================================== -->
+    <!-- ******************************************************** PRODUCT HEADER ******************************************************** -->
+    <section id="product_heading_section">
+        <div id="product_heading">
+            <div>Shop With Us</div>
+            <div>Handpicked Favourites just for you</div>
+        </div>
+    </section>
+    <!-- ******************************************************** /PRODUCT HEADER ******************************************************** -->
+    <!-- ******************************************************** PRODUCT COLLECTION ******************************************************** -->
+    <section id="product_section">
+        <div id="product_collection"></div>
+        <!-- ******************************************************** /PRODUCT COLLECTION ******************************************************** -->
+        <!-- ******************************************************** ADD THE PRODUCT ******************************************************** -->
+        <div id="new_product_panel_div">
+            <button id="new_product_panel" onclick="addMoreProduct()" title="ADD THE NEW PRODUCT">CLICK HERE TO ADD NEW PRODUCT</button>
+        </div>
+    </section>
+    <!-- ******************************************************** /ADD THE PRODUCT ******************************************************** -->
+    <!-- ======================================================== /PRODUCT SECTION ======================================================== -->
+    
+    <!-- ======================================================== SUBSCRIPTION ======================================================== -->
+    <section id="subscription_section">
+        <div id="subscription_section_div">
+            <div id="envelope"> <i class="far fa-envelope"></i> </div>
+            <div id="subscription_heading">Get On The List</div>
+            <div id="subscription_para">Shop Exclusive Promos & SAVE 20% on Your First Order</div>
+            <form action="post">
+                <div id="subscription_email_div">
+                    <input id="subscription_email" value="" type="email" name="Email" placeholder="Your email here" required autocomplete="off" pattern="[A-Za-z0-9.]{3,10}@gmail\.com" title="Your Email (eg. example@gmail.com)">
+                    <button id="subscription_email_btn" for="Email" type="submit" title="SUBSCRIBE NOW">Subscribe</button>
+                </div>
+            </form>
+            <div id="terms_and_policy">By entering your email, you are accepting our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</div>
+        </div>
+    </section>
+    <!-- ======================================================== /SUBSCRIPTION ======================================================== -->
+
+    <!-- ======================================================== FOOTER ======================================================== -->
+    <footer id="Footer">
+        <div id="Footer_div">
+            <div id="Footer_text">Special Offer All Branded Sandals are Flat 50% Discount</div>
+            <div id="Footer_link_div">
+                <!-- Useful Links -->
+                <div class="Footer_link">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">News & Media</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <!-- Information -->
+                <div class="Footer_link">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Delivery Terms</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Returns Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">The Shop</a></li>
+                    </ul>
+                </div>
+                <!-- Address -->
+                <div class="Footer_link">
+                    <h3>Address</h3>
+                    <p id="addr" onclick="openMap()" title="CURRENT ADDRESS">
+                        Karnataka, Bengaluru<br>
+                        BTM layout<br>
+                        560029 <br>
+                    </p>
+                    <p>
+                        <a href="tel:+21 255 999 8888">+21 255 999 8888</a><br>
+                        <a href="mailto:SwathiKart@mail.com">SwathiKart@mail.com</a>
+                    </p>
+                </div>
+                <!-- Payment Methods -->
+                <div id="Payment" class="Footer_link">
+                    <h3>Payment Method</h3>
+                    <table cellspacing="10px">
+                        <tr>
+                            <th><a href="#" class="fab fa-cc-visa" title="VISA"></a></th>
+                            <th><a href="#" class="fab fa-cc-discover" title="DISCOVER"></a></th>
+                            <th><a href="#" class="fab fa-cc-paypal" title="PAYPAL"></a></th>
+                            <th><a href="#" class="fab fa-cc-mastercard" title="MASTERCARD"></a></th>
+                        </tr>
+                        <tr>
+                            <th><a href="#" class="fab fa-cc-stripe" title="STRIP"></a></th>
+                            <th><a href="#" class="fab fa-cc-amex" title="AMEX"></a></th>
+                            <th colspan="2"><a href="#" class="fab fa-cc-jcb" title="JCB"></a></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <hr id="Footer_break">
+    <!-- ======================================================== /FOOTER ======================================================== -->
+    
+    <!-- ======================================================== COPYRIGHT ======================================================== -->
+    <footer id="copyright_footer">
+        <div>
+            <div>&copy; 2023 SwathiKart. All rights reserved. | Designed by &nbsp;<a>Swathi A</a></div>
+            <div>
+                <a href="https://www.linkedin.com/in/Swathi Anbuselvam/" target="_blank" title="LINKEDIN PROFILE"><span class="fab fa-linkedin-in"></span></a>
+                <a href="#"><span class="fab fa-instagram"></span></a>
+                <a href="#"><span class="fab fa-twitter"></span></a>
+                <a href="#"><span class="fab fa-facebook-f"></span></a>
+            </div>
+        </div>
+    </footer>
+    <!-- ======================================================== /COPYRIGHT ======================================================== -->
+
+    <!-- ======================================================== MOVETOP ======================================================== -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-angle-up"></span>
+    </button>
+    <!-- ======================================================== /MOVETOP ======================================================== -->
+
+
+    <!-- ======================================================== CUSTOM DIV ======================================================== -->
+    
+    <div id="overlay">
+		<div id="product_details">
+			<button id="cls" onclick="cls()" title="CLOSE"> X </button>
+
+            <!-- ******************************************************** VIDEO ******************************************************** -->
+            <div id="video_window" title="My page preview">
+                <video height="400px" poster="Images/video_preview.png" controls loop>
+                    <source src="Images/My_WebSite_preview_video.mp4">
+                </video>
+            </div>
+            <!-- ******************************************************** /VIDEO ******************************************************** -->
+
+            <!-- ******************************************************** MAP ******************************************************** -->
+            <div id="map_window" title="MY CURRENT LOCATION">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d485.6557692148454!2d77.61998169888422!3d13.146867234022084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1738589294087!5m2!1sen!2sin" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!-- ******************************************************** /MAP ******************************************************** -->
+
+            <!-- ******************************************************** ADD THE PRODUCT ******************************************************** -->
+            <div id="product_info_div">
+                <div>
+                    <table cellpadding="0px" cellspacing="4px">
+                        <tr>
+                            <th colspan="2" id="product_info_header">ADD PRODUCT INFORMATION</th>
+                        </tr>
+                        <tr>
+                            <td><label for="prdc_name_path">Product image path : </label></td>
+                            <td><input id="prdc_name_path" class="_prdc_name" value="" type="text" required title="PRODUCT IMAGE PATH" autocomplete="off" placeholder="eg. Images/product_name.png"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="prdc_name">Product Name : </label></td>
+                            <td><input id="prdc_name" class="_prdc_name" value="" type="text" required title="PRODUCT NAME" autocomplete="off"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="prdc_rating">Product rating : </label></td>
+                            <td><input id="prdc_rating" class="_prdc_name" value="" type="number" required title="PRODUCT RATING"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="prdc_org_price">Product price : </label></td>
+                            <td><input id="prdc_org_price" class="_prdc_name" value="" type="number" required title="PRODUCT PRICE"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="prdc_dis_price">Discount price : </label></td>
+                            <td><input id="prdc_dis_price" class="_prdc_name" value="" type="number" required title="PRODUCT DISCOUNT PRICE"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><button class="buttons" title="ADD PRODUCT" onclick="addProduct()">Add Product</button></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- ******************************************************** /ADD THE PRODUCT ******************************************************** -->
+
+            <!-- ******************************************************** PRODUCT DETAILS ******************************************************** -->
+            <div id="product_details_wrapper">
+                <div class="product_header">PRODUCT INFORMATION</div>
+                <div id="product_picture_div" title="PRODUCT PICTURE">
+                    <img src="" alt="" onmousemove="magnifier(event, this.src)" onmouseenter="showBox()" onmouseleave="hideBox()">
+                </div>
+                <div id="product_details_div">
+                    <div id="product_name_detls" title="PRODUCT NAME"></div>
+                    <div id="product_rating_detls" title="PRODUCT RATING"></div>
+                    <div id="product_discription_detls" title="PRODUCT DISCRIPTION">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, maiores ut ex quod perferendis dolor consectetur quasi? Blanditiis, odit cupiditate itaque eaque totam maxime laborum doloribus sunt corrupti. Eaque, nisi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda illo odit debitis fuga consequatur? At mollitia sequi molestias magni aliquam error tempore perspiciatis, molestiae, tempora, repellendus inventore impedit voluptates perferendis.</div>
+                    <div>
+                        <span id="product_price_detls" title="PRODUCT PRICE"></span>
+                        <span id="product_discounted_price_detls" title="DISCOUNT PRICE"></span>
+                    </div>
+                </div>
+                <div id="mouse_hover_box"></div>
+            </div>
+            <!-- ******************************************************** /PRODUCT DETAILS ******************************************************** -->
+
+            <!-- ******************************************************** YOUR CART ******************************************************** -->
+            <div id="your_cart">
+                <div class="product_header">YOUR CART</div>
+                <div id="your_cart_section"></div>
+                <div id="checkout">
+                    <br><span id="checkout_btn"><button class="buttons" onclick="checkout()">CHECKOUT</button></span><br><br>
+                    <span id="total_amount">TOTAL AMOUNT : ₹ 0.00 /-</span>
+                </div>
+                <div id="product_cart_image"><img src="" alt=""></div>
+            </div>
+            <!-- ******************************************************** /YOUR CART ******************************************************** -->
+		</div>
+	</div>
+    <!-- ======================================================== /CUSTOM DIV ======================================================== -->
+</body>
+</html>
